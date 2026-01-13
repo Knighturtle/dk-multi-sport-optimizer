@@ -1,13 +1,13 @@
 .git
 __pycache__/
 *.pyc
-.venv/
 .env
+.venv/
+.streamlit/secrets.toml
 data/
 output/
 logs/
-*.csv
-!sample_*.csv
 tests/
 notebooks/
-.streamlit/secrets.toml
+*.csv
+!sample_*.csv
