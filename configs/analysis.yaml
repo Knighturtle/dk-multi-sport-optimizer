@@ -1,0 +1,36 @@
+# Analysis Configuration
+
+# Value Analysis
+value:
+  multiplier: 1000  # value = proj / salary * 1000
+
+# Ceiling Estimation (GPP Mode)
+ceiling:
+  default_volatility: 0.25  # ceiling = proj * (1 + volatility)
+  volatility_by_pos:
+    P: 0.20
+    C: 0.30
+    1B: 0.30
+    2B: 0.35
+    3B: 0.35
+    SS: 0.35
+    OF: 0.40
+    PG: 0.35
+    SG: 0.40
+    SF: 0.40
+    PF: 0.35
+    QB: 0.20
+    RB: 0.30
+    WR: 0.45
+    TE: 0.50
+    DST: 0.60
+
+# Ownership Estimation Proxy
+ownership:
+  weights:
+    value_rank: 0.4
+    proj_rank: 0.3
+    salary_zscore: 0.2
+    pos_scarcity: 0.1
+  base_ownership: 0.05
+  max_ownership: 0.60

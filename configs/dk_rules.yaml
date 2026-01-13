@@ -1,0 +1,13 @@
+salary_cap: 50000
+roster_size: 6
+scoring:
+  points_per_game_won: 0.4
+  points_per_set_won: 2.0
+  points_per_match_won: 6.0
+  bonus_straight_sets: 2.0
+  points_per_ace: 0.4
+  points_per_df: -1.0
+  points_per_break: 0.5
+constraints:
+  max_same_match_pair: 1
+  max_from_same_country: 3

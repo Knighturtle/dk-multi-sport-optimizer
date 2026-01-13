@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Env
+.venv
+venv/
+ENV/
+
+# Streamlit
+.streamlit/
+!.streamlit/config.toml
+
+# App Data & Output
+data/journal.jsonl
+output/*
+!output/.gitkeep
+logs/
+
+# Secrets
+.env
+*.pem
+*.key
+tokens/
+secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db

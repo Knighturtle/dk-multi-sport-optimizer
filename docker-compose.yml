@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: dk-optimizer
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+      - ./logs:/app/logs
+      # Optional: mount configs if you want to edit them live
+      # - ./configs:/app/configs
+    environment:
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

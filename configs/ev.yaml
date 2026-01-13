@@ -1,0 +1,8 @@
+# Default weights for GPP EV calculation
+defaults:
+  w_proj: 1.0       # Weight for Base Projection
+  w_ceil: 0.5       # Weight for Ceiling (upside)
+  w_std: 0.0        # Weight for StdDev (volatility bonus)
+  w_chalk: 0.0      # Weight for Ownership Penalty (linear)
+  w_lev: 0.0        # Weight for Leverage Bonus
+  chalk_threshold: 0.20 # What considers "Chalk"

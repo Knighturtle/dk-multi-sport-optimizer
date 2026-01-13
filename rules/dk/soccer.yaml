@@ -1,0 +1,19 @@
+sport: "SOCCER"
+site: "DraftKings"
+slate: "SOCCER Classic"
+salary_cap: 50000
+lineup_size: 8
+projection_column: "AvgPointsPerGame"
+num_lineups: 20
+
+roster_slots:
+  slots:
+    - {slot: "GK",   eligible: ["GK"],            count: 1}
+    - {slot: "D",    eligible: ["D"],             count: 2}
+    - {slot: "M",    eligible: ["M"],             count: 2}
+    - {slot: "F",    eligible: ["F"],             count: 2}
+    - {slot: "UTIL", eligible: ["D","M","F"],     count: 1}
+
+team_limits:
+  max_from_team: 3
+  min_teams: 2

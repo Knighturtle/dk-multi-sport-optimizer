@@ -1,0 +1,19 @@
+﻿sport: "NHL"
+site: "DraftKings"
+slate: "NHL Classic"
+salary_cap: 50000
+lineup_size: 9
+projection_column: "AvgPointsPerGame"
+num_lineups: 20
+
+roster_slots:
+  slots:
+    - {slot: "C",    eligible: ["C"],      count: 2}
+    - {slot: "W",    eligible: ["W"],      count: 3}   # W は LW/RW を包含
+    - {slot: "D",    eligible: ["D"],      count: 2}
+    - {slot: "G",    eligible: ["G"],      count: 1}
+    - {slot: "UTIL", eligible: ["C","W","D"], count: 1}  # G は不可
+
+team_limits:
+  max_from_team: 4
+  min_teams: 2

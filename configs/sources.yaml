@@ -1,0 +1,78 @@
+# Data Sources Configuration
+
+# 1. Downloads Folder Monitoring
+downloads:
+  enabled: true
+  # watch_dir: ""  # Leave empty to auto-detect Windows user Downloads
+  # watch_dir: "C:/Users/MyUser/Downloads"
+  patterns:
+    - "DKSalaries*.csv"
+    - "*DKSalaries*.csv"
+  pick_latest: true
+
+# 2. API Sources (Official League Data)
+api:
+  enabled: false
+  provider: "draftkings_official" # or custom
+  base_url: "https://api.draftkings.com" # Placeholders
+  endpoints:
+    salaries: "/sites/US/dksalaries"
+
+external:
+  vegas:
+    enabled: false
+    provider: "odds_api"
+  injuries:
+    enabled: false
+    provider: "manual_upload"
+  projections:
+    enabled: false
+    provider: "manual_upload"
+sources:
+    - name: mlb_official
+      sport: MLB
+      type: mlb_statsapi
+      output_dir: "data/auto"
+
+# 3. DraftKings Import Settings
+import:
+  output_dir: "output"
+  filename_prefix: "dk_import"
+
+
+# 3. Input Column Mapping (Normalization)
+# Maps standard internal columns to possible CSV headers (case-insensitive checks recommended in code)
+mapping:
+  player_id: 
+    - "ID"
+    - "Player ID"
+    - "player_id"
+    - "playerId"
+  player_name: 
+    - "Name"
+    - "Player"
+    - "player_name"
+    - "player"
+    - "Player Name"
+  position: 
+    - "Position"
+    - "pos"
+    - "position"
+    - "Pos"
+    - "Roster Position"
+  salary: 
+    - "Salary"
+    - "salary"
+  team: 
+    - "TeamAbbrev"
+    - "Team"
+    - "team"
+    - "team_abbrev"
+    - "Team Abbrev"
+  projection: 
+    - "AvgPointsPerGame"
+    - "FPPG"
+    - "Proj"
+    - "projection"
+    - "proj_points"
+    - "FPTS"

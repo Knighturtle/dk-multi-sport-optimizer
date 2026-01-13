@@ -1,0 +1,21 @@
+sport: "LOL"
+site: "DraftKings"
+slate: "LOL Classic"
+salary_cap: 50000
+lineup_size: 7
+projection_column: "AvgPointsPerGame"
+num_lineups: 20
+
+roster_slots:
+  slots:
+    - {slot: "TOP",  eligible: ["TOP"],  count: 1}
+    - {slot: "JNG",  eligible: ["JNG"],  count: 1}
+    - {slot: "MID",  eligible: ["MID"],  count: 1}
+    - {slot: "ADC",  eligible: ["ADC"],  count: 1}
+    - {slot: "SUP",  eligible: ["SUP"],  count: 1}
+    - {slot: "TEAM", eligible: ["TEAM"], count: 1}
+    - {slot: "FLEX", eligible: ["TOP","JNG","MID","ADC","SUP"], count: 1}
+
+team_limits:
+  max_from_team: 4
+  min_teams: 2

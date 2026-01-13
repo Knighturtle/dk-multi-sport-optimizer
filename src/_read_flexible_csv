@@ -1,0 +1,42 @@
+import os
+import pandas as pd
+import os
+print("[CSV] MODFILE:", __file__)                # どの _read_flexible_csv を使っているか
+def read_flexible_csv(path: str):
+    abspath = os.path.abspath(path)
+    print("[CSV] PATH:", abspath)                # 実際に読むファイル
+    print("[CSV] SIZE:", os.path.getsize(abspath))
+    ...
+
+ATTEMPTS = [
+    dict(encoding="utf-8-sig", sep=","),   # ① 一般的なDK CSV
+    dict(encoding="utf-16",    sep="\t"),  # ② Excel Unicode Text
+    dict(encoding="utf-8-sig", sep=";"),   # ③ セミコロン
+    dict(encoding="latin1",    sep=","),   # ④ 最後の保険
+]
+
+def read_flexible_csv(path: str) -> pd.DataFrame:
+    abspath = os.path.abspath(path)
+    print(f"[CSV] PATH={abspath}")
+    if not os.path.exists(abspath):
+        raise FileNotFoundError(f"CSV not found: {abspath}")
+    size = os.path.getsize(abspath)
+    print(f"[CSV] SIZE={size} bytes")
+    if size == 0:
+        raise ValueError(f"CSV is empty: {abspath}")
+
+    last_err = None
+    for kw in ATTEMPTS:
+        try:
+            df = pd.read_csv(abspath, **kw)
+            print(f"[CSV] READ_OK kw={kw} SHAPE={df.shape}")
+            # 1列誤読の検出（区切りミス）
+            if df.shape[1] <= 1:
+                raise ValueError("Parsed <=1 columns; likely wrong separator/encoding")
+            # 列名の前後空白を除去
+            df.columns = [c.strip() for c in df.columns]
+            return df
+        except Exception as e:
+            last_err = e
+            print(f"[CSV] READ_FAIL kw={kw} ERR={e}")
+    raise ValueError(f"Could not read CSV: {abspath} (last error: {last_err})")

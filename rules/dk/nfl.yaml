@@ -1,0 +1,20 @@
+sport: "NFL"
+site: "DraftKings"
+slate: "NFL Classic"
+salary_cap: 50000
+lineup_size: 9
+projection_column: "AvgPointsPerGame"
+num_lineups: 20
+
+roster_slots:
+  slots:
+    - {slot: "QB",   eligible: ["QB"], count: 1}
+    - {slot: "RB",   eligible: ["RB"], count: 2}
+    - {slot: "WR",   eligible: ["WR"], count: 3}
+    - {slot: "TE",   eligible: ["TE"], count: 1}
+    - {slot: "FLEX", eligible: ["RB","WR","TE"], count: 1}
+    - {slot: "DST",  eligible: ["DST"], count: 1}
+
+team_limits:
+  max_from_team: 4
+  min_teams: 2

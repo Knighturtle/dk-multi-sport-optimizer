@@ -1,0 +1,15 @@
+sport: "NASCAR"
+site: "DraftKings"
+slate: "NASCAR Classic"
+salary_cap: 50000
+lineup_size: 6
+projection_column: "AvgPointsPerGame"
+num_lineups: 20
+
+roster_slots:
+  slots:
+    - {slot: "D", eligible: ["D"], count: 6}   # Driver
+
+team_limits:
+  max_from_team: 6
+  min_teams: 1

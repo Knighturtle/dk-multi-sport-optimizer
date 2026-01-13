@@ -1,0 +1,26 @@
+player_id,player_name,position,salary,team,AvgPointsPerGame
+101,Patrick Mahomes,QB,8200,KC,25.0
+102,Travis Kelce,TE,7800,KC,18.0
+103,Isiah Pacheco,RB,6500,KC,15.0
+104,Rashee Rice,WR,6000,KC,14.0
+105,Lamar Jackson,QB,8000,BAL,24.0
+106,Derrick Henry,RB,7200,BAL,17.0
+107,Zay Flowers,WR,5800,BAL,13.0
+108,Mark Andrews,TE,6200,BAL,12.0
+109,Christian McCaffrey,RB,9000,SF,28.0
+110,Deebo Samuel,WR,7000,SF,16.0
+111,Brandon Aiyuk,WR,6800,SF,15.5
+112,George Kittle,TE,6400,SF,14.5
+113,Brock Purdy,QB,6500,SF,20.0
+114,Jared Goff,QB,6200,DET,19.0
+115,Amon-Ra St. Brown,WR,8500,DET,22.0
+116,Jahmyr Gibbs,RB,6800,DET,16.0
+117,Sam LaPorta,TE,5500,DET,13.0
+118,David Montgomery,RB,6000,DET,14.0
+119,Justin Tucker,K,5000,BAL,9.0
+120,Harrison Butker,K,4800,KC,8.5
+121,Jake Moody,K,4600,SF,8.0
+122,Ravens DST,DST,3500,BAL,7.0
+123,Chiefs DST,DST,3200,KC,6.5
+124,49ers DST,DST,3800,SF,7.5
+125,Lions DST,DST,3000,DET,6.0

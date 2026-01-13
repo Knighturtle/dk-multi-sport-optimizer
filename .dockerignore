@@ -1,0 +1,18 @@
+.git
+.gitignore
+.dockerignore
+.venv
+venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+Thumbs.db
+output/*
+logs/*
+# We copy data/ only if it contains seed data, but usually we exclude user data
+# However, if rules depend on players.csv being present, we might want to copy it if it's "seed".
+# For now, let's exclude journal but keep potential seed data if any.
+data/journal.jsonl
+tests/

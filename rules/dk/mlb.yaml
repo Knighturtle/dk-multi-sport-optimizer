@@ -1,0 +1,22 @@
+sport: "MLB"
+site: "DraftKings"
+slate: "MLB Classic"
+salary_cap: 50000
+lineup_size: 9
+projection_column: "AvgPointsPerGame"
+projections: "AvgPointsPerGame"
+num_lineups: 20
+
+roster_slots:
+  slots:
+    - {slot: "P",     eligible: ["P"],                          count: 2}
+    - {slot: "C/1B",  eligible: ["C/1B"],                       count: 1}
+    - {slot: "2B",    eligible: ["2B"],                         count: 1}
+    - {slot: "3B",    eligible: ["3B"],                         count: 1}
+    - {slot: "SS",    eligible: ["SS"],                         count: 1}
+    - {slot: "OF",    eligible: ["OF"],                         count: 3}
+    - {slot: "UTIL",  eligible: ["P","C/1B","2B","3B","SS","OF"], count: 1}
+
+team_limits:
+  max_from_team: 5
+  min_teams: 2

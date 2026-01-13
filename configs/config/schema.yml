@@ -1,0 +1,13 @@
+required_columns:
+  - player_id
+  - player_name
+  - team
+  - positions   # "OF;1B" のようにセミコロン区切り
+  - salary
+  - proj_points
+  - proj_stdev
+optional_columns:
+  - game
+  - opponent
+  - locked      # 1/0
+  - excluded    # 1/0

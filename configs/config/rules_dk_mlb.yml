@@ -1,0 +1,18 @@
+cap: 50000
+slots:
+  - { name: P,    allows: [P] }
+  - { name: C,    allows: [C] }
+  - { name: 1B,   allows: [1B] }
+  - { name: 2B,   allows: [2B] }
+  - { name: 3B,   allows: [3B] }
+  - { name: SS,   allows: [SS] }
+  - { name: OF1,  allows: [OF] }
+  - { name: OF2,  allows: [OF] }
+  - { name: OF3,  allows: [OF] }
+  - { name: UTIL, allows: [C, 1B, 2B, 3B, SS, OF] }
+team_limits:
+  max_from_one_team: 5
+player_rules:
+  exclude_status: []
+generation:
+  n_lineups: 50

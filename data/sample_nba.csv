@@ -1,0 +1,26 @@
+player_id,player_name,position,salary,team,AvgPointsPerGame
+1,Luka Doncic,PG,11000,DAL,60.5
+2,Nikola Jokic,C,10800,DEN,58.0
+3,Giannis Antetokounmpo,PF/C,10500,MIL,57.0
+4,Jayson Tatum,SF/PF,9800,BOS,50.0
+5,Jaylen Brown,SG/SF,8500,BOS,42.0
+6,Kyrie Irving,PG/SG,9000,DAL,45.0
+7,Jamal Murray,PG,8200,DEN,40.0
+8,Kristaps Porzingis,PF/C,7800,BOS,38.0
+9,Derrick White,PG/SG,6000,BOS,30.0
+10,Aaron Gordon,PF,5800,DEN,28.0
+11,Kentavious Caldwell-Pope,SG,4500,DEN,20.0
+12,Al Horford,C,4200,BOS,22.0
+13,Michael Porter Jr,SF,6400,DEN,32.0
+14,Tim Hardaway Jr,SG/SF,4000,DAL,18.0
+15,Dwight Powell,C,3200,DAL,15.0
+16,Grant Williams,PF,3500,DAL,16.0
+17,Christian Braun,SG,3000,DEN,12.0
+18,Payton Pritchard,PG,3000,BOS,14.0
+19,Sam Hauser,SF,3000,BOS,13.0
+20,Josh Green,SG/SF,3400,DAL,17.0
+21,Maxi Kleber,PF/C,3300,DAL,14.0
+22,Reggie Jackson,PG,3100,DEN,13.0
+23,DeAndre Jordan,C,3000,DEN,10.0
+24,Luke Kornet,C,3000,BOS,11.0
+25,Jaden Hardy,SG,3000,DAL,12.0

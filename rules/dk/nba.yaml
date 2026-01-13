@@ -1,0 +1,22 @@
+sport: "NBA"
+site: "DraftKings"
+slate: "NBA Classic"
+salary_cap: 50000
+lineup_size: 8
+projection_column: "AvgPointsPerGame"
+num_lineups: 20
+
+roster_slots:
+  slots:
+    - {slot: "PG",   eligible: ["PG"],   count: 1}
+    - {slot: "SG",   eligible: ["SG"],   count: 1}
+    - {slot: "SF",   eligible: ["SF"],   count: 1}
+    - {slot: "PF",   eligible: ["PF"],   count: 1}
+    - {slot: "C",    eligible: ["C"],    count: 1}
+    - {slot: "G",    eligible: ["PG","SG"],           count: 1}
+    - {slot: "F",    eligible: ["SF","PF"],           count: 1}
+    - {slot: "UTIL", eligible: ["PG","SG","SF","PF","C"], count: 1}
+
+team_limits:
+  max_from_team: 4
+  min_teams: 2

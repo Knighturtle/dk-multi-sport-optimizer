@@ -1,0 +1,15 @@
+sport: "TENNIS"
+site: "DraftKings"
+slate: "TENNIS Classic"
+salary_cap: 50000
+lineup_size: 6
+projection_column: "AvgPointsPerGame"
+num_lineups: 20
+
+roster_slots:
+  slots:
+    - {slot: "P", eligible: ["P"], count: 6}   # Player
+
+team_limits:
+  max_from_team: 6
+  min_teams: 2
