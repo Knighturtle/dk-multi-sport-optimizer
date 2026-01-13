@@ -23,13 +23,9 @@ COPY src/ src/
 COPY rules/ rules/
 COPY configs/ configs/
 # Create data/output dirs for mounting
-RUN mkdir -p data output logs
 
-# Expose Streamlit Port
+# Expose port
 EXPOSE 8501
 
-# Healthcheck
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
-
-# Command
+# Run the application
 CMD ["streamlit", "run", "src/app.py", "--server.port=8501", "--server.address=0.0.0.0"]

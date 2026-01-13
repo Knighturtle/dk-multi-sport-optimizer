@@ -82,9 +82,12 @@ if "generated_lineups" not in st.session_state:
     st.session_state["generated_lineups"] = []
 
 if "journal_path" not in st.session_state:
-    d_dir = Path("data")
-    d_dir.mkdir(exist_ok=True)
-    st.session_state["journal_path"] = str(d_dir / "journal.jsonl")
+    # Ensure all runtime directories exist
+    for d in ["data", "output", "logs"]:
+        Path(d).mkdir(parents=True, exist_ok=True)
+    
+    st.session_state["journal_path"] = str(Path("data") / "journal.jsonl")
+
 
 # --- Sidebar ---
 st.sidebar.header("1. Sport & Rules")

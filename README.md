@@ -1,106 +1,103 @@
-# DraftKings Multi-Sport Optimizer + Analysis Suite 🏆
+# DraftKings Multi-Sport Optimizer + AI Journal
 
-**A complete Streamlit-based solution for Daily Fantasy Sports (DFS) optimization, analysis, and AI coaching.**
+A professional-grade DFS (Daily Fantasy Sports) optimizer and analysis suite for DraftKings.
+Includes a Streamlit-based UI, Lineup Optimizer, and AI-powered "Coaching" features using local LLMs (Ollama).
 
-This tool provides an all-in-one workspace to import DraftKings player data, analyze matchups/value, visualize market inefficiencies, generate winning lineups using an advanced optimization engine, and receive strategic feedback from a local AI Coach (Ollama).
+## 🚀 Features
 
-![Dashboard Screenshot](images/dashboard_preview.png)
-*(Note: Place your screenshot in `images/dashboard_preview.png`)*
+- **Multi-Sport Support**: NFL, NBA, MLB, NHL (extensible rule engine).
+- **Lineup Optimizer**: Generate up to 150 lineups with customizable constraints (Overlap, Stacking, Groups).
+- **Advanced Analysis**:
+  - Value & Ceiling Projections
+  - Ownership vs. Leverage Analysis
+  - Correlation Heatmaps
+  - EV (Expected Value) Calculations for GPP
+- **AI Coach (Ollama)**:
+  - 📝 **Slate Summary**: Get a quick breakdown of the slate.
+  - 🔍 **Edge Finder**: Identify potential market inefficiencies.
+  - 👮 **Lineup Critique**: AI reviews your generated lineups for flaws.
+  - 📓 **Learning Journal**: Auto-tracks your hypothesis and results in `data/journal.jsonl`.
+- **Multi-Language**: Switch between English and Japanese UI/AI outputs.
 
-## ✨ Key Features
+## 🛠 Prerequisites
 
-* **📂 Data Management**: Import CSVs (DKSalaries), Auto-detect downloads, or fetch from Official APIs.
-* **📊 Analysis Suite**:
-  * **Value Metrics**: Value multipliers, Ceiling projections, and Anomaly detection.
-  * **Visualization**: Interactive charts for Salary vs. Projection, Ownership leverage, and Team Stacking heatmaps.
-* **🤖 AI Coach (Optional)**:
-  * **Slate Summary**: Get an instant overview of the slate.
-  * **Strategy**: Ask for GPP/Cash game strategies customized to the current data.
-  * **Critique**: Have the AI review your generated lineups for flaws.
-  * *(Requires local [Ollama](https://ollama.com/) instance)*
-* **⚙️ Optimizer Engine**:
-  * **Rule-Driven**: Supports any sport via YAML config (NBA, NFL, MLB, etc.).
-  * **Advanced Constraints**: Ownership caps, Stacking rules, Min Ceiling, Max Chalk.
-  * **Modes**: Cash (Projection) vs. GPP (EV/Ceiling weighted).
-* **📓 Learning Journal**: Auto-log your insights, AI advice, and download your history (JSONL/CSV).
+- **Python**: 3.10+
+- **Docker** (Optional, for containerized run)
+- **Ollama** (Optional, for AI features)
+  - Recommended Model: `llama3.1` or `mistral`
 
-## 🚀 Quickstart (Local)
+## 📦 Installation & Local Run
 
-### Prerequisites
+1. **Clone the repository**
 
-* Python 3.10+
-* (Optional) [Ollama](https://ollama.com/) installed and running for AI features.
+   ```bash
+   git clone https://github.com/yourusername/dk-multi-sport-optimizer.git
+   cd dk-multi-sport-optimizer
+   ```
 
-### Installation
+2. **Setup Virtual Environment**
 
-1. **Clone the repository**:
+   ```bash
+   python -m venv .venv
+   # Windows
+   .venv\Scripts\activate
+   # Linux/Mac
+   source .venv/bin/activate
+   ```
 
-    ```bash
-    git clone https://github.com/yourusername/draftkings-optimizer.git
-    cd draftkings-optimizer
-    ```
+3. **Install Dependencies**
 
-2. **Set up virtual environment**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-    ```bash
-    python -m venv .venv
-    # Windows
-    .venv\Scripts\activate
-    # Mac/Linux
-    source .venv/bin/activate
-    ```
+4. **Run Streamlit App**
 
-3. **Install dependencies**:
+   ```bash
+   streamlit run src/app.py
+   ```
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   Open <http://localhost:8501> in your browser.
 
-4. **Run the App**:
+## 🐳 Docker Usage
 
-    ```bash
-    streamlit run src/app.py
-    ```
-
-Access the app at `http://localhost:8501`.
-
-## 🐳 Docker Support
-
-Run the application in a container without installing Python locally.
-
-### Option 1: Docker Compose (Recommended)
-
-This method persists your data and logs.
+### Method 1: Docker Compose (Recommended)
 
 ```bash
 docker compose up --build
 ```
 
-Then visit `http://localhost:8501`.
+- Data Persistence: `data/`, `output/`, and `logs/` are mounted locally.
 
-* **Volume Mounting**:
-  * `./data`: Place your input CSVs here.
-  * `./output`: Generated lineups will be saved here.
-  * `./logs`: Your journal is saved here.
-
-### Option 2: Build Manually
+### Method 2: Clean Docker Run
 
 ```bash
 docker build -t dk-optimizer .
-docker run -p 8501:8501 -v "%cd%/data:/app/data" -v "%cd%/output:/app/output" dk-optimizer
+docker run -p 8501:8501 -v $(pwd)/data:/app/data dk-optimizer
 ```
 
-### 🧠 Using AI with Docker
+## 🧠 AI Setup (Ollama)
 
-If you have Ollama running on your host machine, the Docker container is configured to connect to it via `http://host.docker.internal:11434`.
-Ensure Ollama is running (`ollama serve`).
+To use the "AI Coach" tab:
+
+1. Install [Ollama](https://ollama.com/).
+2. Pull a model: `ollama pull llama3.1:8b`
+3. Run the server: `ollama serve`
+4. In the App, go to **AI Coach** tab and ensure the model name matches (default: `llama3.1:8b`).
+
+> **Note**: If Ollama is not detected, AI buttons will be disabled, but the Optimizer works fine.
+
+## 📂 Data Input
+
+1. **DK Salaries**: Upload the `DKSalaries.csv` derived from DraftKings.
+2. **Ownership (Optional)**: Upload a CSV with player ownership projections for GPP analysis.
+3. **API (Optional)**: Configure `configs/sources.yaml` to fetch from external APIs.
 
 ## ⚠️ Disclaimer
 
-* **Not Financial Advice**: This tool is for educational and research purposes only.
-* **No Guarantees**: "Projections" and "Optimization" do not guarantee winning. DFS involves significant risk.
-* **Compliance**: Ensure you comply with DraftKings' Terms of Service regarding scripting and automation tools.
+This software is for **educational and research purposes only**.
+DFS involves financial risk. There is no guarantee of profit. Use responsibly.
 
 ## 📄 License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT License.
